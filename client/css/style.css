@@ -1303,6 +1303,7 @@ button {
 #nick button#set-nick,
 #nick button#submit-nick,
 #nick button#cancel-nick {
+	color: #aaa;
 	width: 18px;
 }
 
