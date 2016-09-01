@@ -110,9 +110,7 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<h1 class="title">
-									<%= public ? "The Lounge - " : "" %>
-									Connect
-									<%= !displayNetwork && lockNetwork ? "to " + defaults.name : "" %>
+									Connect to GameSurge
 								</h1>
 							</div>
 							<div <%= typeof(displayNetwork) !== "undefined" && !displayNetwork ? 'style="display: none;"' : ''%>>
@@ -160,18 +158,20 @@
 							<div class="col-sm-9">
 								<input class="input nick" id="connect:nick" name="nick" value="<%= defaults.nick %>">
 							</div>
+
 							<div class="col-sm-3">
-								<label for="connect:username">Username</label>
+								<label for="connect:authserv_username">AuthServ Username</label>
 							</div>
 							<div class="col-sm-9">
-								<input class="input username" id="connect:username" name="username" value="<%= defaults.username %>">
+								<input class="input username" id="connect:authserv_username" name="authserv_username">
 							</div>
 							<div class="col-sm-3">
-								<label for="connect:realname">Real name</label>
+								<label for="connect:authserv_password">AuthServ Password</label>
 							</div>
 							<div class="col-sm-9">
-								<input class="input" id="connect:realname" name="realname" value="<%= defaults.realname %>">
+								<input type="password" class="input password" id="connect:authserv_password" name="authserv_password">
 							</div>
+
 							<div class="col-sm-3">
 								<label for="connect:channels">Channels</label>
 							</div>
@@ -330,13 +330,8 @@
 							</div>
 							<div class="col-sm-12">
 								<p class="about">
-									<% if (gitCommit) { %>
-										The Lounge is running from source
-										(<a href="https://github.com/thelounge/lounge/tree/<%= gitCommit %>" target="_blank"><code><%= gitCommit %></code></a>).<br>
-									<% } else { %>
-										The Lounge is in version <strong><%= version %></strong>
-										(<a href="https://github.com/thelounge/lounge/releases/tag/v<%= version %>" target="_blank">See release notes</a>).<br>
-									<% } %>
+									This is GameSurge's fork of The Lounge<br>
+									For official information on The Lounge, visit the links below.<br>
 
 									<a href="https://thelounge.github.io/" target="_blank">Website</a><br>
 									<a href="https://thelounge.github.io/docs/" target="_blank">Documentation</a><br>

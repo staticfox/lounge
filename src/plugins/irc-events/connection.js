@@ -20,6 +20,13 @@ module.exports = function(irc, network) {
 		}
 
 		var delay = 1000;
+		if (network.authserv_username && network.authserv_password) {
+			setTimeout(function() {
+				irc.raw("AUTHSERV", "AUTH", network.authserv_username, network.authserv_password);
+			}, delay);
+			delay += 1000;
+		}
+
 		var commands = network.commands;
 		if (Array.isArray(commands)) {
 			commands.forEach(function(cmd) {
